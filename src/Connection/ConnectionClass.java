@@ -4,9 +4,18 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class ConnectionClass {
+    private  static ConnectionClass instance = new ConnectionClass();
+
+    private ConnectionClass(){
+
+    }
+    public static ConnectionClass getInstance(){
+        return instance;
+    }
     Connection connection;
 
     public Connection getConnection(){
+
         String databaseName = "online_shop";
         String userName = "root";
         String password="";
